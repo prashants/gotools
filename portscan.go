@@ -1,5 +1,7 @@
 /* This program scans for all open ports from 1 to 65535 for the given host */
 
+/* Licensed under GNU GPL V3 as available on http://www.gnu.org/licenses/gpl-3.0.html */
+
 package main
 
 import (
