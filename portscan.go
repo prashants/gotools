@@ -10,17 +10,25 @@ import (
 	"os"
 )
 
+
+
 func main() {
 	args := os.Args
 	if len(args) < 2 {
-		fmt.Println("Specify hostname as argument to this command")
-		fmt.Println("Eg : portscan 127.0.0.1")
+		fmt.Println("Usage: portscan ip-address")
 		os.Exit(1)
 	}
 
-	host := args[1]
+	host_str := os.Args[1]
+	addr := net.ParseIP(host_str)
+	if addr == nil {
+		fmt.Println("Invalid ip-address")
+		fmt.Println("Usage: portscan ip-address")
+		os.Exit(1)
+	}
+	host := addr.String()
 
-	fmt.Println("Port scanning started for " + host)
+	fmt.Println("Port scanning started for " + host + ".")
 	for port := 1; port <= 65535; port += 1 {
 		connstr := fmt.Sprintf("%s:%d", host, port)
 		conn, err := net.Dial("tcp", connstr)
