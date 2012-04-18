@@ -27,3 +27,14 @@ The above crontab entry will run the notifyquotes every 1 minute
 
 This program is licensed under GNU GPL V3 as available on
 http://www.gnu.org/licenses/gpl-3.0.html
+
+********************************* resolve.go *********************************
+
+Resolve hostname to ip address
+
+Run the command as :
+
+$go run resolve.go www.google.com
+
+This program is licensed under GNU GPL V3 as available on
+http://www.gnu.org/licenses/gpl-3.0.html
